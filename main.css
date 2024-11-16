@@ -20,6 +20,16 @@ a:focus, a:hover {
 body {
 	font-family: 'Noto Serif', serif;
 	font-size: 18px;
+	margin: 0;
+    padding: 0;
+    display: grid;
+	grid-template-columns: 1fr 2fr 1fr;  /* Three equal columns: nav, main content, sidebar */
+    grid-template-rows: auto 1fr auto;  /* Header, content area, footer */
+    grid-template-areas:
+"header header header"
+        "nav main aside"
+        "footer footer footer";
+    gap: 20px;  /* Space between grid items */
 }
 
 h1, h2 {
@@ -39,6 +49,10 @@ h2 {
 
 header {
 	text-align: center;
+	grid-area: header;
+	background-color: #333;
+    color: white;
+    padding: 20px;
 }
 
 main {
